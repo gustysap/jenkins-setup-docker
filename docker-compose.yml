@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  jenkins:
+    environment:
+      - JENKINS_ADMIN_USER=admin
+      - JENKINS_ADMIN_PASSWORD=password
+    build: ./
+    image: jenkins:custom
+    privileged: true
+    user: root
+    ports:
+      - 8081:8080
+      - 50000:50000
+    container_name: jenkins
+    volumes:
+      - ~/jenkins:/var/jenkins_home
+      - ./casc_config.yaml:/var/jenkins_home/casc_config.yaml
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/local/bin/docker

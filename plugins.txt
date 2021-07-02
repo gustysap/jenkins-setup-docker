@@ -1,0 +1,7 @@
+configuration-as-code:latest
+git:latest
+pipeline-stage-view:latest
+kubernetes:latest
+credentials-binding:latest
+matrix-auth:latest
+pam-auth:latest
